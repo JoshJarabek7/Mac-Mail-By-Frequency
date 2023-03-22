@@ -2,8 +2,9 @@ import mailbox
 from collections import defaultdict
 import tkinter as tk
 from tkinter import filedialog
-from openpyxl import Workbook
+import csv
 from tkinter import messagebox
+
 
 def count_by_address(mbox_file, output_file):
     mbox = mailbox.mbox(mbox_file)
@@ -22,19 +23,21 @@ def count_by_address(mbox_file, output_file):
         sender_counts[sender_email][1] += 1
     sender_counts_list = [(k, v[0], v[1]) for k, v in sender_counts.items()]
     sender_counts_list.sort(key=lambda x: x[2], reverse=True)
-    wb = Workbook()
-    ws = wb.active
-    ws.append(['Sender Email Address', 'Alias', 'Message Count'])
-    for sender, name, count in sender_counts_list:
-        ws.append([sender, name, count])
-    wb.save(output_file)
+    with open(output_file, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(['Sender Email Address', 'Alias', 'Message Count'])
+        for sender, name, count in sender_counts_list:
+            csvwriter.writerow([sender, name, count])
     messagebox.showinfo("Success!", "The file has been successfully processed!")
 
 
 def select_file():
-    mbox_file = filedialog.askopenfilename(initialdir="/", title="Select mbox file", filetypes=(("Mbox files", "*.mbox"), ("All files", "*.*")))
-    output_file = filedialog.asksaveasfilename(initialdir="/", title="Save output file", defaultextension=".xlsx", filetypes=(("Excel files", "*.xlsx"), ("All files", "*.*")))
+    mbox_file = filedialog.askopenfilename(initialdir="/", title="Select mbox file",
+                                           filetypes=(("Mbox files", "*.mbox"), ("All files", "*.*")))
+    output_file = filedialog.asksaveasfilename(initialdir="/", title="Save output file", defaultextension=".csv",
+                                               filetypes=(("CSV files", "*.csv"), ("All files", "*.*")))
     count_by_address(mbox_file, output_file)
+
 
 def create_gui():
     root = tk.Tk()
