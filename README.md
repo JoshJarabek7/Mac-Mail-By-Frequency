@@ -1,6 +1,6 @@
-# Mac-Mail-By-Frequency
+# Mail-By-Frequency
 
-## Sort Mail by sender frequency and tackle the worst spam first using the Mac OS Mail app.
+## Sort Mail by sender frequency and tackle the worst spam first.
 
 <br>
 
@@ -63,15 +63,6 @@ Then I thought, *"oh, there's probably something for that on GitHub"*.
 <br>
 
 There's probably a solution out there that costs money. But why spend money when you could **not spend money instead**?
-
-<br>
-
-I don't really know Swift, but I've always wanted to learn it.
-
-<br>
-
-No better time than right now.
-
 <br>
 
 **It's time to take back our mailboxes!**
