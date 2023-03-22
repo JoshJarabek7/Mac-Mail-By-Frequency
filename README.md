@@ -35,6 +35,18 @@ This is a starting point to eventually creating a plugin for MacOS's default Mai
 
 <br><br>
 
+## Main Menu
+
+![main screen](main.png)
+
+<br><br>
+
+## Alert Box
+
+![alert box](alert.png)
+
+<br><br>
+
 # How this works
 
 ## Installation
@@ -79,7 +91,8 @@ git clone https://github.com/JoshJarabek7/Mail-By-Frequency.git
 
 # Roadmap
 
-- Create a GUI version to make things easier
+~~Create a GUI version to make things easier~~
+
 - Dive deeper into whether Swift's MailKit will allow access to MacOS Mail app in a way that lets you loop through messages
 - Make a web-based version
 
