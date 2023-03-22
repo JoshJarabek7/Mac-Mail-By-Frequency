@@ -37,13 +37,13 @@ This is a starting point to eventually creating a plugin for MacOS's default Mai
 
 ## Main Menu
 
-![main screen](main.png)
+![main screen](img/main.png)
 
 <br><br>
 
 ## Alert Box
 
-![alert box](alert.png)
+![alert box](img/alert.png)
 
 <br><br>
 
